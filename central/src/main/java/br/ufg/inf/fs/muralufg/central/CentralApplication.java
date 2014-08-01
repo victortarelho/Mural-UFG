@@ -1,7 +1,7 @@
 package br.ufg.inf.fs.muralufg.central;
 
-import br.ufg.inf.fs.muralufg.central.versao.VersaoHealthCheck;
-import br.ufg.inf.fs.muralufg.central.versao.VersaoResource;
+import br.ufg.inf.fs.muralufg.central.identificacao.VersaoHealthCheck;
+import br.ufg.inf.fs.muralufg.central.identificacao.VersaoResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;

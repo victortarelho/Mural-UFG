@@ -1,4 +1,4 @@
-package br.ufg.inf.fs.muralufg.central.versao;
+package br.ufg.inf.fs.muralufg.central.identificacao;
 
 import br.ufg.inf.fs.muralufg.central.api.CentralIdentificacao;
 import com.codahale.metrics.annotation.Timed;
@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * Identifica a Central e fornece a versão correspondente.
  */
-@Path("/versao")
+@Path("/identificacao")
 @Produces(MediaType.APPLICATION_JSON)
 public class VersaoResource {
     private final String template;

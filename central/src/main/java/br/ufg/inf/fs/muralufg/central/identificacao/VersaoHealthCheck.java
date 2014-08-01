@@ -1,4 +1,4 @@
-package br.ufg.inf.fs.muralufg.central.versao;
+package br.ufg.inf.fs.muralufg.central.identificacao;
 
 import com.codahale.metrics.health.HealthCheck;
 
