@@ -1,19 +1,19 @@
-package br.ufg.inf.fs.muralufg.central.versao;
+package br.ufg.inf.fs.muralufg.central.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 
-public class Saying {
+public class Versao {
     private long id;
 
     @Length(max = 3)
     private String content;
 
-    public Saying() {
+    public Versao() {
         // Jackson deserialization
     }
 
-    public Saying(long id, String content) {
+    public Versao(long id, String content) {
         this.id = id;
         this.content = content;
     }

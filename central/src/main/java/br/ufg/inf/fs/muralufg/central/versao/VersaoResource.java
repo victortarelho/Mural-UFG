@@ -1,5 +1,6 @@
 package br.ufg.inf.fs.muralufg.central.versao;
 
+import br.ufg.inf.fs.muralufg.central.api.Versao;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
 
@@ -25,8 +26,8 @@ public class VersaoResource {
 
     @GET
     @Timed
-    public Saying sayHello(@QueryParam("name") Optional<String> name) {
+    public Versao sayHello(@QueryParam("name") Optional<String> name) {
         final String value = String.format(template, name.or(defaultName));
-        return new Saying(counter.incrementAndGet(), value);
+        return new Versao(counter.incrementAndGet(), value);
     }
 }
