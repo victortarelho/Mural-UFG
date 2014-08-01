@@ -7,6 +7,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
 public class CentralApplication extends Application<CentralConfiguration> {
+
     public static void main(String[] args) throws Exception {
         new CentralApplication().run(args);
     }
@@ -24,15 +25,16 @@ public class CentralApplication extends Application<CentralConfiguration> {
     @Override
     public void run(CentralConfiguration configuration,
                     Environment environment) {
-        final VersaoResource resource = new VersaoResource(
+        final VersaoResource versaoResource = new VersaoResource(
                 configuration.getTemplate(),
                 configuration.getDefaultName()
         );
-        environment.jersey().register(resource);
+
+        environment.jersey().register(versaoResource);
 
         final VersaoHealthCheck healthCheck =
                 new VersaoHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
-        environment.jersey().register(resource);
+        environment.jersey().register(versaoResource);
     }
 }
