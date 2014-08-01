@@ -24,6 +24,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="Central" />
         <module name="D1" />
       </profile>
     </annotationProcessing>
