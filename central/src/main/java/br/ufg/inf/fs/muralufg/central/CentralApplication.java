@@ -14,7 +14,7 @@ public class CentralApplication extends Application<CentralConfiguration> {
 
     @Override
     public String getName() {
-        return "hello-world";
+        return "Central UFG";
     }
 
     @Override
@@ -23,17 +23,19 @@ public class CentralApplication extends Application<CentralConfiguration> {
     }
 
     @Override
-    public void run(CentralConfiguration configuration,
+    public void run(CentralConfiguration configuracao,
                     Environment environment) {
         final VersaoResource versaoResource = new VersaoResource(
-                configuration.getTemplate(),
-                configuration.getDefaultName()
+                configuracao.getTemplate(),
+                configuracao.getDefaultName(),
+                configuracao.getNome(),
+                configuracao.getVersao()
         );
 
         environment.jersey().register(versaoResource);
 
         final VersaoHealthCheck healthCheck =
-                new VersaoHealthCheck(configuration.getTemplate());
+                new VersaoHealthCheck(configuracao.getTemplate());
         environment.healthChecks().register("template", healthCheck);
         environment.jersey().register(versaoResource);
     }

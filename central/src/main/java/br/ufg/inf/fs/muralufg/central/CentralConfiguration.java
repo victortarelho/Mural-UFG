@@ -12,6 +12,12 @@ public class CentralConfiguration extends Configuration {
     private String template;
 
     @NotEmpty
+    private String nome;
+
+    @NotEmpty
+    private String versao;
+
+    @NotEmpty
     private String defaultName = "Stranger";
 
     @JsonProperty
@@ -32,5 +38,25 @@ public class CentralConfiguration extends Configuration {
     @JsonProperty
     public void setDefaultName(String name) {
         this.defaultName = name;
+    }
+
+    @JsonProperty
+    public String getNome() {
+        return nome;
+    }
+
+    @JsonProperty
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @JsonProperty
+    public String getVersao() {
+        return versao;
+    }
+
+    @JsonProperty
+    public void setVersao(String versao) {
+        this.versao = versao;
     }
 }
