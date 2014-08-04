@@ -26,8 +26,6 @@ public class CentralApplication extends Application<CentralConfiguration> {
     public void run(CentralConfiguration configuracao,
                     Environment environment) {
         final IdentificacaoResource versaoResource = new IdentificacaoResource(
-                configuracao.getTemplate(),
-                configuracao.getDefaultName(),
                 configuracao.getNome(),
                 configuracao.getVersao()
         );

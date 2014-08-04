@@ -12,16 +12,8 @@ public class CentralIdentificacao {
     private String nome;
     private String versao;
 
-    @Length(max = 3)
-    private String content;
-
-    public CentralIdentificacao() {
-        // Jackson deserialization
-    }
-
-    public CentralIdentificacao(long id, String content, String nome, String versao) {
+    public CentralIdentificacao(long id, String nome, String versao) {
         this.id = id;
-        this.content = content;
         this.nome = nome;
         this.versao = versao;
     }
@@ -49,10 +41,5 @@ public class CentralIdentificacao {
     @JsonProperty
     public long getId() {
         return id;
-    }
-
-    @JsonProperty
-    public String getContent() {
-        return content;
     }
 }
