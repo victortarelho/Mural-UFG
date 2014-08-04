@@ -1,7 +1,7 @@
 package br.ufg.inf.fs.muralufg.central;
 
-import br.ufg.inf.fs.muralufg.central.identificacao.VersaoHealthCheck;
-import br.ufg.inf.fs.muralufg.central.identificacao.VersaoResource;
+import br.ufg.inf.fs.muralufg.central.identificacao.IdentificacaoHealthCheck;
+import br.ufg.inf.fs.muralufg.central.identificacao.IdentificacaoResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -25,7 +25,7 @@ public class CentralApplication extends Application<CentralConfiguration> {
     @Override
     public void run(CentralConfiguration configuracao,
                     Environment environment) {
-        final VersaoResource versaoResource = new VersaoResource(
+        final IdentificacaoResource versaoResource = new IdentificacaoResource(
                 configuracao.getTemplate(),
                 configuracao.getDefaultName(),
                 configuracao.getNome(),
@@ -34,9 +34,9 @@ public class CentralApplication extends Application<CentralConfiguration> {
 
         environment.jersey().register(versaoResource);
 
-        final VersaoHealthCheck healthCheck =
-                new VersaoHealthCheck(configuracao.getTemplate());
-        environment.healthChecks().register("template", healthCheck);
+        final IdentificacaoHealthCheck healthCheck =
+                new IdentificacaoHealthCheck(configuracao);
+        environment.healthChecks().register("identificacao", healthCheck);
         environment.jersey().register(versaoResource);
     }
 }

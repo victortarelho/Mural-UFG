@@ -3,6 +3,10 @@ package br.ufg.inf.fs.muralufg.central.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 
+/**
+ * Fornece a identificação da Central UFG
+ * (inclui a versão da API de acesso aos serviços).
+ */
 public class CentralIdentificacao {
     private long id;
     private String nome;

@@ -12,18 +12,18 @@ import javax.ws.rs.core.MediaType;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Identifica a Central e fornece a versão correspondente.
+ * Identificação da Central.
  */
 @Path("/identificacao")
 @Produces(MediaType.APPLICATION_JSON)
-public class VersaoResource {
+public class IdentificacaoResource {
     private final String template;
     private final String defaultName;
     private final AtomicLong counter;
     private final String nome;
     private final String versao;
 
-    public VersaoResource(String template, String defaultName, String nome, String versao) {
+    public IdentificacaoResource(String template, String defaultName, String nome, String versao) {
         this.template = template;
         this.defaultName = defaultName;
         this.counter = new AtomicLong();
