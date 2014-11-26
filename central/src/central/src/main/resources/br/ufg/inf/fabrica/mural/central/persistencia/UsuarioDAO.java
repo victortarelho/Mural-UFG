@@ -30,7 +30,6 @@ public class UsuarioDAO {
     public Collection obterUsuariosGrupo(GrupoDestinatario grupoDestinatario){
         EntityManager em = getEntityManager();
         Collection usuarios = null;
-        em.getTransaction().begin();
         
         usuarios = em.createQuery("select u from Usuario u where "+grupoDestinatario.getId()+" in (select grupo.id from u.GrupoDestinatario grupo )").getResultList();
         
