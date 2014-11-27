@@ -1,10 +1,30 @@
 package br.ufg.inf.fabrica.mural.central.dominio;
 
 import br.ufg.inf.fabrica.mural.central.stub.GrupoDestinatarioDaoStub;
-
 import java.util.Collection;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class GrupoDestinatario {
+    
+    @Id
+    @Column(name = "ID_GRUPO")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @Column(nullable = false, length = 3000, name = "NOME_GRUPO")
 
     private String nomeGrupo;
 
